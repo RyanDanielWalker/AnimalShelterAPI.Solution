@@ -24,7 +24,9 @@ An API that allows users to View, Add, Edit, and Delete cats and dogs from an im
 ### Connecting project to database via appsettings.json
 1. In the production folder `AnimalShelterAPI.Solution/AnimalShelterAPI` create a file called `appsettings.json`
 2. Add the following code:
-`{
+
+```
+{
   "Logging": {
     "LogLevel": {
       "Default": "Warning",
@@ -34,20 +36,56 @@ An API that allows users to View, Add, Edit, and Delete cats and dogs from an im
   },
   "AllowedHosts": "*",
   "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;database={YOUR_SCHEMA_NAME};uid=root;pwd={YOUR_PASSWORD};"
+    "DefaultConnection": "Server={YOUR_SERVER};Port={YOUR_PORT};database={YOUR_SCHEMA_NAME};uid=root;pwd={YOUR_PASSWORD};"
   }
-}`
-   * Fill in the desired name of your schema and your MySQL Workbench password, omitting the curly braces
-3. Run the command `dotnet ef database update` to generate database using Entity Framework Core.
-4. If you wish to update the database with any changes to the code, run the command `dotnet ef migrations add {MigrationName}` and again `dotnet ef database update`
+}
+```
 
-4. To run the app:
-    * Navigate to `AnimalShelterAPI.Solution/AnimalShelterAPI` in your command line
-    * Run the command `dotnet restore` to restore the dependencies that are listed in the .csproj
-    * Run the command `dotnet build` to build the project and its dependencies into a set of binaries
-    * Run the command `dotnet ef database update` to create database and populate tables
-    * Finally, run the command `dotnet run` to run the project!
-    * Note: `dotnet run` also restores and builds the project, so you can use this single command to start the app
-    * View the application via your preferred web browser by visiting `localhost:5000/`
+   * Fill in the desired name of your server, port, schema and MySQL Workbench password, omitting the curly braces
+
+### To run the API:
+1. Navigate to `AnimalShelterAPI.Solution/AnimalShelterAPI` in your command line
+2. Run the command `dotnet restore` to restore the dependencies that are listed in the .csproj
+3. Run the command `dotnet build` to build the project and its dependencies into a set of binaries
+4. Run the command `dotnet ef database update` to create database and populate tables
+5. If you wish to update the database with any changes to the code, run the command `dotnet ef migrations add {MigrationName}` and  again `dotnet ef database update`
+6. Finally, run the command `dotnet run` to run the project!
+7. Note: `dotnet run` also restores and builds the project, so you can use this single command to start the app
+
+## API Documentation
+#### Swagger
+1. After launching the project with `dotnet run` gain access to the API with Swagger by visiting `localhost:5000/swagger`
+#### Postman
+1. Explore the following endpoints using Postman
+### API Endpoints
+URL `https://localhost:5000`
+#### HTTP Request Structure for Cats
+```
+GET /api/cats
+POST /api/cats
+GET /api/cats/{id}
+PUT /api/cats/{id}
+DELETE /api/cats/{id}
+```
+#### Sample JSON Response for Cats
+```
+  { 
+    "catId": 1,
+    "name": "Doug",
+    "age": 4,
+    "gender": "Male",
+    "description": "Lovely"
+  }
+```
+
+
+
+
+
+
+
+
+
+
 
 
