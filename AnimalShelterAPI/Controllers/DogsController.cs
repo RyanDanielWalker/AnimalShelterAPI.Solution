@@ -39,5 +39,17 @@ namespace AnimalShelterAPI.Controllers
       }
       return await query.ToListAsync();
     }
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Dog>> GetDog(int id)
+    {
+      var doggy = await _db.Dogs.FindAsync(id);
+
+      if (doggy == null)
+      {
+        return NotFound();
+      }
+
+      return doggy;
+    }
   }
 }
