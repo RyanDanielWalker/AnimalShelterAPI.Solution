@@ -119,6 +119,7 @@ There were no bugs found
 * Swagger
 * Swashbuckle.AspNetCore 
 * Postman
+* AspNetCore Mvc Versioning
 
 ### License
 
