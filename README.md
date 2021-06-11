@@ -5,7 +5,7 @@
 #### By _Ryan Walker_
 
 ## Description
-An API that allows users to View, Add, Edit, and Delete cats and dogs from an imaginary Animal Shelter's archive. A user may interact with the in-use version of the API using Postman or the built-in Swagger UI. 
+An API that allows users to View, Add, Edit, and Delete cats and dogs from an imaginary Animal Shelter's archive. A user may interact with the in-use version of the API using Postman or the built-in Swagger UI. Additionally, users may download the corresponding Animal Shelter Client web application [here](https://github.com/RyanDanielWalker/AnimalShelterClient.Solution)
 
 ## Setup and Use
 
@@ -53,6 +53,8 @@ An API that allows users to View, Add, Edit, and Delete cats and dogs from an im
 7. Note: `dotnet run` also restores and builds the project, so you can use this single command to start the app
 
 ## API Documentation
+#### Client Application
+1. Download the corresponding Animal Shelter API client web application [here](https://github.com/RyanDanielWalker/AnimalShelterClient.Solution)
 #### Swagger
 1. After launching the project with `dotnet run` gain access to the API with Swagger by visiting `localhost:5000/swagger`
 #### Postman
