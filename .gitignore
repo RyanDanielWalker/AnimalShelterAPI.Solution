@@ -4,6 +4,6 @@ obj/
 .env
 .DS_Store
 */appsettings.json
-*/appsettings.Development.json
-launchSettings.json
+# */appsettings.Development.json
+# launchSettings.json
 WeatherForecast.cs

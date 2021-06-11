@@ -56,9 +56,10 @@ An API that allows users to View, Add, Edit, and Delete cats and dogs from an im
 #### Swagger
 1. After launching the project with `dotnet run` gain access to the API with Swagger by visiting `localhost:5000/swagger`
 #### Postman
-1. Explore the following endpoints using Postman
+1. Explore API endpoints using Postman
 ### API Endpoints
-URL `https://localhost:5000`
+Request URL `https://localhost:5000`
+### Cats
 #### HTTP Request Structure for Cats
 ```
 GET /api/cats
@@ -66,6 +67,10 @@ POST /api/cats
 GET /api/cats/{id}
 PUT /api/cats/{id}
 DELETE /api/cats/{id}
+```
+#### Sample Request URL
+```
+https://localhost:5001/api/Cats?name=doug
 ```
 #### Sample JSON Response for Cats
 ```
@@ -77,6 +82,55 @@ DELETE /api/cats/{id}
     "description": "Lovely"
   }
 ```
+### Dogs
+#### HTTP Request Structure for Dogs
+```
+GET /api/dogs
+POST /api/dogs
+GET /api/dogs/{id}
+PUT /api/dogs/{id}
+DELETE /api/dogs/{id}
+```
+#### Sample Request URL
+```
+https://localhost:5001/api/Dogs?name=emma
+```
+#### Sample JSON Response for Dogs
+```
+  {
+    "dogId": 5,
+    "name": "Emma",
+    "age": 18,
+    "gender": "Female",
+    "description": "Lovely"
+  }
+```
+## Known Bugs
+There were no bugs found
+
+## Technologies Used
+* ASP .NET Core MVC
+* C#
+* VS Code
+* MySQL Workbench
+* MySQL
+* Entity Framework Core
+* LINQ
+* Swagger
+* Swashbuckle.AspNetCore 
+* Postman
+
+### License
+
+MIT
+
+Copyright (c) 2021 _Ryan Walker_
+
+## Contact Information
+[Ryandanielwalker@gmail.com](mailto:ryandanielwalker@gmail.com)
+
+
+
 
 
 
