@@ -10,17 +10,17 @@ namespace AnimalShelterAPI.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
-  public class CatsController : ControllerBase
+  public class DogsController : ControllerBase
   {
     private readonly AnimalShelterAPIContext _db;
-    public CatsController(AnimalShelterAPIContext db)
+    public DogsController(AnimalShelterAPIContext db)
     {
       _db = db;
     }
     [HttpGet]
-    public async Task<ActionResult<IEnumerable<Cat>>> Get(string name, int age, string description, string gender)
+    public async Task<ActionResult<IEnumerable<Dog>>> Get(string name, int age, string description, string gender)
     {
-      var query = _db.Cats.AsQueryable();
+      var query = _db.Dogs.AsQueryable();
       if (name != null)
       {
         query = query.Where(entry => entry.Name == name);
