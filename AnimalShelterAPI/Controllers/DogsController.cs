@@ -59,5 +59,37 @@ namespace AnimalShelterAPI.Controllers
 
       return CreatedAtAction(nameof(GetDog), new { id = doggy.DogId }, doggy);
     }
+    [HttpPut("{id}")]
+    public async Task<IActionResult> Put(int id, Dog doggy)
+    {
+      if (id != doggy.DogId)
+      {
+        return BadRequest();
+      }
+
+      _db.Entry(doggy).State = EntityState.Modified;
+
+      try
+      {
+        await _db.SaveChangesAsync();
+      }
+      catch (DbUpdateConcurrencyException)
+      {
+        if (!DogExists(id))
+        {
+          return NotFound();
+        }
+        else
+        {
+          throw;
+        }
+      }
+
+      return NoContent();
+    }
+    private bool DogExists(int id)
+    {
+      return _db.Dogs.Any(d => d.DogId == id);
+    }
   }
 }
