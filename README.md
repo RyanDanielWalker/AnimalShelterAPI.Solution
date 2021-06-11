@@ -1,4 +1,4 @@
-# _Animal Shelter API_
+# _Animal Shelter API v 1.0_
 
 #### _A C# web API for Cats and Dogs_
 
