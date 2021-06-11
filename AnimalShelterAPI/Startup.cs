@@ -37,6 +37,12 @@ namespace AnimalShelterAPI
         {
           c.SwaggerDoc("v1", new OpenApiInfo { Title = "AnimalShelterAPI", Version = "v1" });
         });
+      services.AddApiVersioning(o =>
+      {
+        o.ReportApiVersions = true;
+        o.AssumeDefaultVersionWhenUnspecified = true;
+        o.DefaultApiVersion = new ApiVersion(1, 0);
+      });
     }
 
 
